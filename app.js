@@ -1,10 +1,15 @@
+
+// https://shortner-url-project.herokuapp.com/  
+
+
+
 const express = require('express')
 const shortId = require('shortid')
 const createHttpError = require('http-errors')
 const mongoose = require('mongoose')
 const path = require('path')
 const ShortUrl = require('./models/url.model')
-
+const port=process.env.PORT|| 3000;
 const app = express()
 app.use(express.static(path.join(__dirname, 'public')))
 app.use(express.json())
@@ -73,4 +78,4 @@ app.use((err, req, res, next) => {
   res.render('index', { error: err.message })
 })
 
-app.listen(3000, () => console.log('🌏 on port 3000...'))
+app.listen(port, () => console.log(`🌏 on port ${port}..`))
