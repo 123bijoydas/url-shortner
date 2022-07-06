@@ -42,7 +42,7 @@ app.post('/', async (req, res, next) => {
       res.render('index', {
         // short_url: `${req.hostname}/${urlExists.shortId}`,
         // short_url: `${req.headers.host}/${urlExists.shortId}`,
-        short_url: `${req.shortner-url-project.herokuapp.com}/${urlExists.shortId}`,
+        short_url: `https://shortner-url-project.herokuapp.com/${urlExists.shortId}`,
       })
       return
     }
@@ -51,7 +51,7 @@ app.post('/', async (req, res, next) => {
     res.render('index', {
       // short_url: `${req.hostname}/${result.shortId}`,
       // short_url: `${req.headers.host}/${result.shortId}`,
-      short_url: `${req.shortner-url-project.herokuapp.com}/${result.shortId}`,
+      short_url: `https://shortner-url-project.herokuapp.com/${result.shortId}`,
     })
   } catch (error) {
     next(error)
